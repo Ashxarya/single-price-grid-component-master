@@ -1,0 +1,199 @@
+:root {
+  --clr-prim-100: hsl(179, 62%, 43%);
+  --clr-prim-200: hsl(71, 73%, 54%);
+
+  --clr-neut-100: hsl(204, 43%, 93%);
+  --clr-neut-200: hsl(218, 22%, 67%);
+
+  --ff-base: "Karla", sans-serif;
+}
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+/*
+    2. Remove default margin
+  */
+* {
+  margin: 0;
+}
+/*
+    3. Allow percentage-based heights in the application
+  */
+html,
+body {
+  height: 100%;
+}
+/*
+    Typographic tweaks!
+    4. Add accessible line-height
+    5. Improve text rendering
+  */
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+    6. Improve media defaults
+  */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+    7. Remove built-in form typography styles
+  */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+/*
+    8. Avoid text overflows
+  */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+body {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  background-color: var(--clr-neut-100);
+  padding: 2rem;
+  font-family: var(--ff-base);
+  position: relative;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+  max-width: 550px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0px 0px 14px 1px #00000024;
+}
+
+.grid {
+  padding: 30px;
+  font-size: 1rem;
+  color: var(--clr-neut-200);
+}
+
+.grid__one {
+  background-color: white;
+}
+
+.grid__one h1 {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--clr-prim-100);
+  margin-bottom: 0.9375rem;
+}
+
+.grid__one h2 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-prim-200);
+  margin-bottom: 0.9375rem;
+}
+
+.grid__two {
+  background-color: var(--clr-prim-100);
+  color: white;
+  font-size: 1rem;
+}
+
+.grid__two h3 {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+
+.grid__two p {
+  color: var(--clr-neut-100);
+  margin-left: 10px;
+}
+
+.grid__two span {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.grid__two h3,
+span {
+  color: white;
+}
+
+.grid__two .button {
+  text-align: center;
+  width: 100%;
+  padding: 15px;
+  background-color: var(--clr-prim-200);
+  display: inline-block;
+  text-decoration: none;
+  color: white;
+  font-size: 1.2rem;
+  margin-top: 30px;
+  font-weight: 700;
+  box-shadow: 0px 4px 10px 1px #00000033;
+  border-radius: 8px;
+}
+
+.grid__three {
+  background-color: #4abebd;
+}
+
+.grid__three h4 {
+  color: white;
+  font-weight: 400;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.grid__three p {
+  color: hsl(204, 43%, 93%);
+  line-height: 1.5rem;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  .container {
+    grid-template-columns: 1fr 1fr;
+  }
+  .grid__one {
+    grid-area: 1/1/2/3;
+  }
+  .grid__two,
+  .grid__three {
+    grid-row: 2;
+  }
+}
